@@ -1,0 +1,11 @@
+body{
+  margin:0;
+  height:100vh;
+
+  background-image: url('file:///C:/Users/pooja/Downloads/2abc5565-81e9-42bb-a18b-3d2e79453423.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: Arial, sans-serif;
+}

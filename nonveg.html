@@ -1,0 +1,1511 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Venkat Sai Foodies - Non Veg</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY + BACKGROUND
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #222;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.30),
+            rgba(255,255,255,0.30)
+        ),
+        url("file:///C:/Users/pooja/Downloads/2abc5565-81e9-42bb-a18b-3d2e79453423.png");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+    width: 100%;
+
+    background: rgba(255,255,255,0.96);
+
+    padding: 15px 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 2px 12px rgba(0,0,0,0.12);
+}
+
+
+.logo {
+
+    min-width: 230px;
+}
+
+.logo h1 {
+
+    font-size: 24px;
+
+    color: #e23744;
+
+    font-weight: 800;
+}
+
+.logo p {
+
+    font-size: 12px;
+
+    color: #777;
+
+    margin-top: 3px;
+}
+
+
+/* SEARCH */
+
+.search-box {
+
+    flex: 1;
+
+    max-width: 650px;
+
+    position: relative;
+}
+
+.search-box input {
+
+    width: 100%;
+
+    padding: 14px 45px 14px 18px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: #f8f8f8;
+}
+
+.search-box input:focus {
+
+    border-color: #e23744;
+
+    background: white;
+}
+
+.search-icon {
+
+    position: absolute;
+
+    right: 17px;
+
+    top: 12px;
+
+    font-size: 20px;
+}
+
+
+/* PROFILE */
+
+.profile {
+
+    margin-left: auto;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #f1f1f1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 270px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background: rgba(0,0,0,0.25);
+}
+
+.hero-content h2 {
+
+    color: white;
+
+    font-size: 42px;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        2px 2px 5px #000;
+}
+
+.hero-content p {
+
+    color: white;
+
+    font-size: 18px;
+
+    text-shadow:
+        1px 1px 4px #000;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+
+    width: 90%;
+
+    max-width: 1450px;
+
+    margin: auto;
+
+    padding: 35px 0 60px;
+}
+
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.toolbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    gap: 15px;
+}
+
+.toolbar h3 {
+
+    font-size: 25px;
+
+    color: white;
+
+    text-shadow:
+        2px 2px 4px #000;
+}
+
+
+.controls {
+
+    display: flex;
+
+    gap: 10px;
+}
+
+.controls select {
+
+    padding: 11px 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.product-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.product-card {
+
+    background: rgba(255,255,255,0.97);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.25);
+}
+
+
+/* IMAGE */
+
+.image-container {
+
+    position: relative;
+
+    width: 100%;
+}
+
+.product-image {
+
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* OFFER */
+
+.offer {
+
+    position: absolute;
+
+    bottom: 12px;
+
+    left: 12px;
+
+    background: #e23744;
+
+    color: white;
+
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* CONTENT */
+
+.card-content {
+
+    padding: 18px;
+}
+
+.product-name {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.rating {
+
+    display: inline-block;
+
+    background: #267e3e;
+
+    color: white;
+
+    padding: 4px 7px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-right: 7px;
+}
+
+.delivery {
+
+    color: #555;
+
+    font-size: 13px;
+}
+
+.description {
+
+    color: #777;
+
+    font-size: 14px;
+
+    margin-top: 10px;
+
+    line-height: 1.5;
+}
+
+.location {
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.price-section {
+
+    margin-top: 15px;
+
+    padding-top: 12px;
+
+    border-top: 1px solid #eee;
+}
+
+.price {
+
+    color: #e23744;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.order-button {
+
+    width: 100%;
+
+    margin-top: 14px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #e23744;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.order-button:hover {
+
+    background: #c92332;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 40px auto 0;
+
+    padding: 13px 25px;
+
+    background: #222;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1200px) {
+
+    .product-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .product-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .header {
+
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+
+        order: 3;
+
+        width: 100%;
+
+        max-width: none;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 550px) {
+
+    .header {
+
+        padding: 13px 20px;
+    }
+
+    .product-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h2 {
+
+        font-size: 30px;
+    }
+
+    .toolbar {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .controls {
+
+        width: 100%;
+    }
+
+    .controls select {
+
+        flex: 1;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+<div class="logo">
+
+<h1>
+🍗 Venkat Sai Foodies
+</h1>
+
+<p>
+Homemade • Fresh • Traditional
+</p>
+
+</div>
+
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search for non-veg items..."
+onkeyup="searchFood()">
+
+<span class="search-icon">
+🔍
+</span>
+
+</div>
+
+
+<div class="profile">
+👤
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h2>
+🍗 Non-Veg Specials
+</h2>
+
+<p>
+Fresh • Homemade • Delicious • Taste Every Bite
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="container">
+
+
+<div class="toolbar">
+
+<h3>
+🍗 Our Non-Veg Collection
+</h3>
+
+
+<div class="controls">
+
+<select
+id="categoryFilter"
+onchange="filterFood()">
+
+<option value="all">
+All Items
+</option>
+
+<option value="rice">
+Rice
+</option>
+
+<option value="curry">
+Curry
+</option>
+
+</select>
+
+
+<select
+id="sortSelect"
+onchange="sortFood()">
+
+<option value="default">
+Sort By
+</option>
+
+<option value="low">
+Price: Low to High
+</option>
+
+<option value="high">
+Price: High to Low
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+
+<div
+class="product-grid"
+id="productGrid">
+
+
+
+<!-- =========================
+     CHICKEN RICE
+========================= -->
+
+<div class="product-card"
+data-name="chicken rice"
+data-category="rice"
+data-price="200">
+
+<div class="image-container">
+
+<img
+class="product-image"
+src="file:///C:/Users/pooja/Downloads/chicken%20rice.jpg"
+alt="Chicken Rice">
+
+<div class="offer">
+POPULAR
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Chicken Rice
+</div>
+
+<span class="rating">
+4.9 ★
+</span>
+
+<span class="delivery">
+Fresh
+</span>
+
+<div class="description">
+Delicious homemade chicken rice prepared with fresh ingredients.
+</div>
+
+<div class="location">
+📍 Venkat Sai Foodies
+</div>
+
+<div class="price-section">
+
+<div class="price">
+Single / Plate: ₹200
+</div>
+
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- =========================
+     MUTTON RICE
+========================= -->
+
+<div class="product-card"
+data-name="mutton rice"
+data-category="rice"
+data-price="250">
+
+<div class="image-container">
+
+<img
+class="product-image"
+src="file:///C:/Users/pooja/Downloads/mutton%20rice.jpg"
+alt="Mutton Rice">
+
+<div class="offer">
+SPECIAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Mutton Rice
+</div>
+
+<span class="rating">
+4.9 ★
+</span>
+
+<span class="delivery">
+Fresh
+</span>
+
+<div class="description">
+Tender mutton served with flavorful homemade rice.
+</div>
+
+<div class="location">
+📍 Venkat Sai Foodies
+</div>
+
+<div class="price-section">
+
+<div class="price">
+Single / Plate: ₹250
+</div>
+
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- =========================
+     BOTI RICE
+========================= -->
+
+<div class="product-card"
+data-name="boti rice"
+data-category="rice"
+data-price="200">
+
+<div class="image-container">
+
+<img
+class="product-image"
+src="file:///C:/Users/pooja/Downloads/boti.jpg"
+alt="Boti Rice">
+
+<div class="offer">
+SPECIAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Boti Rice
+</div>
+
+<span class="rating">
+4.8 ★
+</span>
+
+<span class="delivery">
+Fresh
+</span>
+
+<div class="description">
+Traditional spicy boti preparation served with fresh rice.
+</div>
+
+<div class="location">
+📍 Venkat Sai Foodies
+</div>
+
+<div class="price-section">
+
+<div class="price">
+Single / Plate: ₹200
+</div>
+
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- =========================
+     TALKAYYA RICE
+========================= -->
+
+<div class="product-card"
+data-name="talkayya rice"
+data-category="rice"
+data-price="200">
+
+<div class="image-container">
+
+<img
+class="product-image"
+src="file:///C:/Users/pooja/Downloads/talkaya%20curry.jpg"
+alt="Talkayya Rice">
+
+<div class="offer">
+TRADITIONAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Talkayya Rice
+</div>
+
+<span class="rating">
+4.8 ★
+</span>
+
+<span class="delivery">
+Fresh
+</span>
+
+<div class="description">
+Traditional homemade Talkayya preparation served with rice.
+</div>
+
+<div class="location">
+📍 Venkat Sai Foodies
+</div>
+
+<div class="price-section">
+
+<div class="price">
+Plate: ₹200
+</div>
+
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- =========================
+     EGG RICE
+========================= -->
+
+<div class="product-card"
+data-name="egg rice"
+data-category="rice"
+data-price="0">
+
+<div class="image-container">
+
+<img
+class="product-image"
+src="C:\Users\pooja\Downloads\rice egg.jpg"
+alt="Egg Rice">
+
+<div class="offer">
+POPULAR
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Egg Rice
+</div>
+
+<span class="rating">
+4.8 ★
+</span>
+
+<span class="delivery">
+Fresh
+</span>
+
+<div class="description">
+Flavorful homemade rice prepared with fresh eggs.
+</div>
+
+<div class="location">
+📍 Venkat Sai Foodies
+</div>
+
+<div class="price-section">
+
+<div class="price">
+Price: To Be Added
+</div>
+
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- =========================
+     CHICKEN CURRY
+========================= -->
+
+<div class="product-card"
+data-name="chicken curry"
+data-category="curry"
+data-price="100">
+
+<div class="image-container">
+
+<img
+class="product-image"
+src="C:\Users\pooja\Downloads\Chicken-Curry-recipe.jpg"
+alt="Chicken Curry">
+
+<div class="offer">
+BEST SELLER
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Chicken Curry
+</div>
+
+<span class="rating">
+4.9 ★
+</span>
+
+<span class="delivery">
+Fresh
+</span>
+
+<div class="description">
+Homemade spicy chicken curry prepared with traditional spices.
+</div>
+
+<div class="location">
+📍 Venkat Sai Foodies
+</div>
+
+<div class="price-section">
+
+<div class="price">
+Single: ₹100
+<br>
+Full Plate: ₹180
+</div>
+
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- =========================
+     MUTTON CURRY
+========================= -->
+
+<div class="product-card"
+data-name="mutton curry"
+data-category="curry"
+data-price="180">
+
+<div class="image-container">
+
+<img
+class="product-image"
+src="C:\Users\pooja\Downloads\m2.jpeg"
+alt="Mutton Curry">
+
+<div class="offer">
+PREMIUM
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Mutton Curry
+</div>
+
+<span class="rating">
+4.9 ★
+</span>
+
+<span class="delivery">
+Fresh
+</span>
+
+<div class="description">
+Rich homemade mutton curry cooked with traditional spices.
+</div>
+
+<div class="location">
+📍 Venkat Sai Foodies
+</div>
+
+<div class="price-section">
+
+<div class="price">
+Single: ₹180
+<br>
+Full Plate: ₹350
+</div>
+
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- =========================
+     BOTI CURRY
+========================= -->
+
+<div class="product-card"
+data-name="boti curry"
+data-category="curry"
+data-price="100">
+
+<div class="image-container">
+
+<img
+class="product-image"
+src="C:\Users\pooja\Downloads\boti.jpg"
+alt="Boti Curry">
+
+<div class="offer">
+SPECIAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Boti Curry
+</div>
+
+<span class="rating">
+4.8 ★
+</span>
+
+<span class="delivery">
+Fresh
+</span>
+
+<div class="description">
+Traditional spicy boti curry prepared fresh with homemade spices.
+</div>
+
+<div class="location">
+📍 Venkat Sai Foodies
+</div>
+
+<div class="price-section">
+
+<div class="price">
+Single: ₹100
+<br>
+Full Plate: ₹200
+</div>
+
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- =========================
+     TALKAYYA CURRY
+========================= -->
+
+<div class="product-card"
+data-name="talkayya curry"
+data-category="curry"
+data-price="180">
+
+<div class="image-container">
+
+<img
+class="product-image"
+src="C:\Users\pooja\Downloads\talkaya curry.jpg"
+alt="Talkayya Curry">
+
+<div class="offer">
+TRADITIONAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Talkayya Curry
+</div>
+
+<span class="rating">
+4.8 ★
+</span>
+
+<span class="delivery">
+Fresh
+</span>
+
+<div class="description">
+Traditional homemade Talkayya curry with authentic flavour.
+</div>
+
+<div class="location">
+📍 Venkat Sai Foodies
+</div>
+
+<div class="price-section">
+
+<div class="price">
+Single: ₹180
+<br>
+Full Plate: ₹300
+</div>
+
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- =========================
+     EGG CURRY
+========================= -->
+
+<div class="product-card"
+data-name="egg curry"
+data-category="curry"
+data-price="30">
+
+<div class="image-container">
+
+<img
+class="product-image"
+src="C:\Users\pooja\Downloads\egg.jpeg"
+alt="Egg Curry">
+
+<div class="offer">
+VALUE
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Egg Curry
+</div>
+
+<span class="rating">
+4.8 ★
+</span>
+
+<span class="delivery">
+Fresh
+</span>
+
+<div class="description">
+Homemade egg curry cooked with traditional spices.
+</div>
+
+<div class="location">
+📍 Venkat Sai Foodies
+</div>
+
+<div class="price-section">
+
+<div class="price">
+Single: ₹30
+</div>
+
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+</div>
+
+
+<a
+href="menu.html"
+class="back-button">
+
+← BACK TO MENU
+
+</a>
+
+
+</main>
+
+
+
+<script>
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchFood() {
+
+    let input =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    let cards =
+        document
+        .querySelectorAll(".product-card");
+
+    cards.forEach(function(card) {
+
+        let name =
+            card.getAttribute("data-name");
+
+        if (name.includes(input)) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+function filterFood() {
+
+    let filter =
+        document
+        .getElementById("categoryFilter")
+        .value;
+
+    let cards =
+        document
+        .querySelectorAll(".product-card");
+
+    cards.forEach(function(card) {
+
+        let category =
+            card.getAttribute("data-category");
+
+        if (
+            filter === "all" ||
+            category === filter
+        ) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   SORT
+========================= */
+
+function sortFood() {
+
+    let select =
+        document
+        .getElementById("sortSelect")
+        .value;
+
+    let grid =
+        document
+        .getElementById("productGrid");
+
+    let cards =
+        Array.from(
+            grid.querySelectorAll(".product-card")
+        );
+
+    cards.sort(function(a, b) {
+
+        let priceA =
+            Number(a.getAttribute("data-price"));
+
+        let priceB =
+            Number(b.getAttribute("data-price"));
+
+        if (select === "low") {
+
+            return priceA - priceB;
+
+        }
+
+        if (select === "high") {
+
+            return priceB - priceA;
+
+        }
+
+        return 0;
+
+    });
+
+    cards.forEach(function(card) {
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+```

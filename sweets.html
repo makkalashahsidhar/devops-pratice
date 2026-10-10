@@ -1,0 +1,2934 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Venkat Sai Foodies - Sweets</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #222;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.30),
+            rgba(255,255,255,0.30)
+        ),
+        url("file:///C:/Users/pooja/Downloads/2abc5565-81e9-42bb-a18b-3d2e79453423.png");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+    width: 100%;
+
+    background: rgba(255,255,255,0.96);
+
+    padding: 15px 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 2px 12px rgba(0,0,0,0.12);
+}
+
+
+.logo {
+
+    min-width: 230px;
+}
+
+.logo h1 {
+
+    font-size: 24px;
+
+    color: #e23744;
+
+    font-weight: 800;
+}
+
+.logo p {
+
+    font-size: 12px;
+
+    color: #777;
+
+    margin-top: 3px;
+}
+
+
+/* SEARCH */
+
+.search-box {
+
+    flex: 1;
+
+    max-width: 650px;
+
+    position: relative;
+}
+
+.search-box input {
+
+    width: 100%;
+
+    padding: 14px 45px 14px 18px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: #f8f8f8;
+}
+
+.search-box input:focus {
+
+    border-color: #e23744;
+
+    background: white;
+}
+
+.search-icon {
+
+    position: absolute;
+
+    right: 17px;
+
+    top: 12px;
+
+    font-size: 20px;
+}
+
+
+/* PROFILE */
+
+.profile {
+
+    margin-left: auto;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #f1f1f1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 270px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background: rgba(0,0,0,0.25);
+}
+
+.hero-content h2 {
+
+    color: white;
+
+    font-size: 42px;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        2px 2px 5px #000;
+}
+
+.hero-content p {
+
+    color: white;
+
+    font-size: 18px;
+
+    text-shadow:
+        1px 1px 4px #000;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+
+    width: 90%;
+
+    max-width: 1450px;
+
+    margin: auto;
+
+    padding: 35px 0 60px;
+}
+
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.toolbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    gap: 15px;
+}
+
+.toolbar h3 {
+
+    font-size: 25px;
+
+    color: white;
+
+    text-shadow:
+        2px 2px 4px #000;
+}
+
+
+.controls {
+
+    display: flex;
+
+    gap: 10px;
+}
+
+.controls select {
+
+    padding: 11px 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.product-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.product-card {
+
+    background: rgba(255,255,255,0.97);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.25);
+}
+
+
+/* IMAGE */
+
+.image-container {
+
+    position: relative;
+
+    width: 100%;
+}
+
+.product-image {
+
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* OFFER */
+
+.offer {
+
+    position: absolute;
+
+    bottom: 12px;
+
+    left: 12px;
+
+    background: #e23744;
+
+    color: white;
+
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* CONTENT */
+
+.card-content {
+
+    padding: 18px;
+}
+
+.product-name {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.rating {
+
+    display: inline-block;
+
+    background: #267e3e;
+
+    color: white;
+
+    padding: 4px 7px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-right: 7px;
+}
+
+.delivery {
+
+    color: #555;
+
+    font-size: 13px;
+}
+
+.description {
+
+    color: #777;
+
+    font-size: 14px;
+
+    margin-top: 10px;
+
+    line-height: 1.5;
+}
+
+.location {
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: 8px;
+}
+
+
+/* PRICE */
+
+.price-section {
+
+    margin-top: 15px;
+
+    padding-top: 12px;
+
+    border-top: 1px solid #eee;
+}
+
+.price {
+
+    color: #e23744;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+/* BUTTON */
+
+.order-button {
+
+    width: 100%;
+
+    margin-top: 14px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #e23744;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.order-button:hover {
+
+    background: #c92332;
+}
+
+
+/* BACK */
+
+.back-button {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 40px auto 0;
+
+    padding: 13px 25px;
+
+    background: #222;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1200px) {
+
+    .product-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .product-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .header {
+
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+
+        order: 3;
+
+        width: 100%;
+
+        max-width: none;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 550px) {
+
+    .header {
+
+        padding: 13px 20px;
+    }
+
+    .product-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h2 {
+
+        font-size: 30px;
+    }
+
+    .toolbar {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .controls {
+
+        width: 100%;
+    }
+
+    .controls select {
+
+        flex: 1;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+<div class="logo">
+
+<h1>
+🍬 Venkat Sai Foodies
+</h1>
+
+<p>
+Homemade • Fresh • Traditional
+</p>
+
+</div>
+
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search for sweets..."
+onkeyup="searchFood()">
+
+<span class="search-icon">
+🔍
+</span>
+
+</div>
+
+
+<div class="profile">
+👤
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h2>
+🍬 Traditional Sweets
+</h2>
+
+<p>
+Telangana & Andhra Special • Taste Every Bite
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="container">
+
+
+<div class="toolbar">
+
+<h3>
+🍬 Our Sweet Collection
+</h3>
+
+
+<div class="controls">
+
+<select id="categoryFilter"
+onchange="filterFood()">
+
+<option value="all">
+All Sweets
+</option>
+
+<option value="laddu">
+Laddu
+</option>
+
+<option value="traditional">
+Traditional
+</option>
+
+<option value="halwa">
+Halwa
+</option>
+
+<option value="milk">
+Milk Sweets
+</option>
+
+</select>
+
+
+<select id="sortSelect"
+onchange="sortFood()">
+
+<option value="default">
+Sort By
+</option>
+
+<option value="low">
+Price: Low to High
+</option>
+
+<option value="high">
+Price: High to Low
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+
+<div class="product-grid"
+id="productGrid">
+
+
+
+<!-- 1 ARISELU -->
+
+<div class="product-card"
+data-name="ariselu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\arselu.webp"
+alt="Ariselu">
+
+<div class="offer">
+TRADITIONAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Ariselu
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional Telugu sweet made with rice flour and jaggery.
+</div>
+
+<div class="">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 200kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 2 POOTHAREKULU -->
+
+<div class="product-card"
+data-name="pootharekulu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\putta.jpeg"
+alt="Pootharekulu">
+
+<div class="offer">
+SPECIAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Pootharekulu
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Famous Andhra paper sweet with rice sheets, ghee and sugar.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 200kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 3 GAVVALU -->
+
+<div class="product-card"
+data-name="gavvalu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\gavalu.jpeg"
+alt="Gavvalu">
+
+<div class="offer">
+POPULAR
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Gavvalu
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Crispy traditional sweet shells coated with jaggery syrup.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 4 BOONDI LADDU -->
+
+<div class="product-card"
+data-name="boondi laddu"
+data-category="laddu"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\Boondi-Laddu-1.webp"
+alt="Boondi Laddu">
+
+<div class="offer">
+BEST SELLER
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Boondi Laddu
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Soft boondi laddus prepared with traditional ingredients.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 5 RAVA LADDU -->
+
+<div class="product-card"
+data-name="rava laddu"
+data-category="laddu"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\rava laddu.webp"
+alt="Rava Laddu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Rava Laddu
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Delicious semolina laddu with a rich homemade taste.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 200kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 6 NUVVULA LADDU -->
+
+<div class="product-card"
+data-name="nuvvula laddu"
+data-category="laddu"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\nuvula laddu.jpg"
+alt="Nuvvula Laddu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Nuvvula Laddu
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional sesame laddus with a delicious nutty flavour.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250 kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 7 PALLI LADDU -->
+
+<div class="product-card"
+data-name="palli laddu"
+data-category="laddu"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\palli laddu.jpg"
+alt="Palli Laddu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Palli Laddu
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Groundnut laddu made with traditional jaggery.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 8 COCONUT LADDU -->
+
+<div class="product-card"
+data-name="coconut laddu"
+data-category="laddu"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\k laddu.webp"
+alt="Coconut Laddu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Coconut Laddu
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Soft coconut laddus with a rich sweet flavour.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price:250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 9 BELLAM UNDALU -->
+
+<div class="product-card"
+data-name="bellam undalu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\unda.jpeg"
+alt="Bellam Undalu">
+
+<div class="offer">
+TRADITIONAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Bellam Undalu
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional jaggery sweet balls made with homemade ingredients.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 10 SUNNUNDALU -->
+
+<div class="product-card"
+data-name="sunnundalu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\sunuda.jpg"
+alt="Sunnundalu">
+
+<div class="offer">
+SPECIAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Sunnundalu
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional urad dal laddus with a rich homemade flavour.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 11 BOORELU -->
+
+<div class="product-card"
+data-name="boorelu poornalu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\purnam bb.jpg"
+alt="Boorelu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Boorelu / Poornalu
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Classic Andhra festive sweet with sweet lentil filling.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 12 BOBBATLU -->
+
+<div class="product-card"
+data-name="bobbatlu bhakshalu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\pola.webp"
+alt="Bobbatlu">
+
+<div class="offer">
+SPECIAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Bobbatlu / Bhakshalu
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Soft traditional sweet flatbread filled with sweet dal mixture.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 13 KAJJIKAYALU -->
+
+<div class="product-card"
+data-name="kajjikayalu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\kajja.jpeg"
+alt="Kajjikayalu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Kajjikayalu
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Crispy festive sweet filled with coconut and jaggery.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 14 KOVA KAJJIKAYALU -->
+
+<div class="product-card"
+data-name="kova kajjikayalu"
+data-category="milk"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\k garjalu.jpg"
+alt="Kova Kajjikayalu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Kova Kajjikayalu
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Kajjikayalu filled with delicious rich kova.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 15 MADATHA KAJA -->
+
+<div class="product-card"
+data-name="madatha kaja"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\kaja.jpg"
+alt="Madatha Kaja">
+
+<div class="offer">
+POPULAR
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Madatha Kaja
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Layered crispy Andhra sweet soaked in sugar syrup.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 16 KAKINADA KAJA -->
+
+<div class="product-card"
+data-name="kakinada kaja"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\kk kaja.jpg"
+alt="Kakinada Kaja">
+
+<div class="offer">
+SPECIAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Kakinada Kaja
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Famous Andhra sweet with crispy layers and sugar syrup.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 17 MALAI KAJA -->
+
+<div class="product-card"
+data-name="malai kaja"
+data-category="milk"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\malai kaja.jpeg"
+alt="Malai Kaja">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Malai Kaja
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Soft and rich kaja with a delicious creamy flavour.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 18 KHAJA -->
+
+<div class="product-card"
+data-name="khaja"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\nn kaja.jpeg"
+alt="Khaja">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Khaja
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Crispy layered sweet coated with traditional sugar syrup.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 19 MADUGULU -->
+
+<div class="product-card"
+data-name="madugulu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\madgulu.webp"
+alt="Madugulu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Madugulu
+</div>
+
+<span class="rating">4.7 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional regional sweet prepared with homemade ingredients.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 20 PALATHALIKALU -->
+
+<div class="product-card"
+data-name="palathalikalu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\pala tatikalu.jpg"
+alt="Palathalikalu">
+
+<div class="offer">
+TRADITIONAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Palathalikalu
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional Andhra sweet prepared with milk and rice flour.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 21 CHALIMIDI -->
+
+<div class="product-card"
+data-name="chalimidi"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\chalmindi.jpg"
+alt="Chalimidi">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Chalimidi
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional Telugu sweet made with rice flour and jaggery.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 22 RAVVA KESARI -->
+
+<div class="product-card"
+data-name="ravva kesari"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\Rava-Kesari-1.webp"
+alt="Ravva Kesari">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Ravva Kesari
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Soft and aromatic semolina sweet with ghee and nuts.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 23 CHAKKERA PONGALI -->
+
+<div class="product-card"
+data-name="chakkera pongali"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\pongal.jpg"
+alt="Chakkera Pongali">
+
+<div class="offer">
+TRADITIONAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Chakkera Pongali
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional sweet pongal made with rice, jaggery and ghee.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 24 PAYASAM -->
+
+<div class="product-card"
+data-name="payasam"
+data-category="milk"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\payasam.jpeg"
+alt="Payasam">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Payasam
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Creamy traditional Indian dessert made with milk and rice.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 25 KOBBARI LOUJU -->
+
+<div class="product-card"
+data-name="kobbari louju"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\kobari louju.webp"
+alt="Kobbari Louju">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Kobbari Louju
+</div>
+
+<span class="rating">4.7 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional coconut-based sweet with a rich flavour.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 26 LASKORA UNDALU -->
+
+<div class="product-card"
+data-name="laskora undalu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\laskor undalu.JPG"
+alt="Laskora Undalu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Laskora Undalu
+</div>
+
+<span class="rating">4.7 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional homemade sweet balls with a rich taste.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 27 JEEDILU -->
+
+<div class="product-card"
+data-name="jeedilu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\jeddilu.jpg"
+alt="Jeedilu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Jeedilu
+</div>
+
+<span class="rating">4.7 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional sweet prepared with homemade ingredients.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 28 VENNAPPALU -->
+
+<div class="product-card"
+data-name="vennappalu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\venna appalu.jpg"
+alt="Vennappalu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Vennappalu
+</div>
+
+<span class="rating">4.7 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional soft sweet with a homemade flavour.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 29 NUVVULA ARISELU -->
+
+<div class="product-card"
+data-name="nuvvula ariselu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\Nuvvu-Nethi-Ariselu.jpg"
+alt="Nuvvula Ariselu">
+
+<div class="offer">
+SPECIAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Nuvvula Ariselu
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional ariselu with sesame seeds and jaggery.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 30 BELLAM GAVVALU -->
+
+<div class="product-card"
+data-name="bellam gavvalu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\b gavalu.jpeg"
+alt="Bellam Gavvalu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Bellam Gavvalu
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Crispy gavvalu coated in delicious jaggery syrup.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 31 PAAKAM GAVVALU -->
+
+<div class="product-card"
+data-name="paakam gavvalu"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\p gavalu.jpg"
+alt="Paakam Gavvalu">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Paakam Gavvalu
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional sweet gavvalu prepared with sugar paakam.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 32 DOODH PEDA -->
+
+<div class="product-card"
+data-name="doodh peda"
+data-category="milk"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\pedha.jpeg"
+alt="Doodh Peda">
+
+<div class="offer">
+MILK SWEET
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Doodh Peda
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Rich milk peda with a smooth and creamy texture.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 33 MILK PEDA -->
+
+<div class="product-card"
+data-name="milk peda"
+data-category="milk"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\milk pedha.jpeg"
+alt="Milk Peda">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Milk Peda
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Soft creamy peda made from rich milk.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 34 BADUSHA -->
+
+<div class="product-card"
+data-name="badusha"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\badusha.jpg"
+alt="Badusha">
+
+<div class="offer">
+POPULAR
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Badusha
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Soft flaky sweet dipped in delicious sugar syrup.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 35 KAJU KATLI -->
+
+<div class="product-card"
+data-name="kaju katli"
+data-category="milk"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\kaju katli.jpeg"
+alt="Kaju Katli">
+
+<div class="offer">
+PREMIUM
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Kaju Katli
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Premium cashew sweet with a smooth melt-in-mouth texture.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 36 MYSORE PAK -->
+
+<div class="product-card"
+data-name="mysore pak"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\mysore pak.jpg"
+alt="Mysore Pak">
+
+<div class="offer">
+BEST SELLER
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Mysore Pak
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Rich ghee-based traditional sweet with a soft texture.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 37 QUBANI KA MEETHA -->
+
+<div class="product-card"
+data-name="qubani ka meetha"
+data-category="traditional"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\qbk metha.jpeg"
+alt="Qubani Ka Meetha">
+
+<div class="offer">
+HYDERABADI
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Qubani Ka Meetha
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Classic dessert made from sweet dried apricots.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 38 DOUBLE KA MEETHA -->
+
+<div class="product-card"
+data-name="double ka meetha"
+data-category="milk"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\Double-Ka-Meetha.webp"
+alt="Double Ka Meetha">
+
+<div class="offer">
+HYDERABADI
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Double Ka Meetha
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Hyderabadi bread dessert prepared with milk, sugar and nuts.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 39 SHEER KHURMA -->
+
+<div class="product-card"
+data-name="sheer khurma"
+data-category="milk"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\shherkuma.jpeg"
+alt="Sheer Khurma">
+
+<div class="offer">
+SPECIAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Sheer Khurma
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Creamy vermicelli dessert with milk, dates and dry fruits.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 40 CARROT HALWA -->
+
+<div class="product-card"
+data-name="carrot halwa"
+data-category="halwa"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\carrot halwa.jpeg"
+alt="Carrot Halwa">
+
+<div class="offer">
+SPECIAL
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Carrot Halwa
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Rich carrot halwa prepared with milk, ghee and nuts.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 300kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 41 BADAM HALWA -->
+
+<div class="product-card"
+data-name="badam halwa"
+data-category="halwa"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\b halwa.jpg"
+alt="Badam Halwa">
+
+<div class="offer">
+PREMIUM
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Badam Halwa
+</div>
+
+<span class="rating">4.9 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Premium almond halwa with rich ghee and traditional flavour.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price:250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+<!-- 42 GODHUMA HALWA -->
+
+<div class="product-card"
+data-name="godhuma halwa"
+data-category="halwa"
+data-price="0">
+
+<div class="image-container">
+
+<img class="product-image"
+src="C:\Users\pooja\Downloads\g halwa.jpeg"
+alt="Godhuma Halwa">
+
+</div>
+
+<div class="card-content">
+
+<div class="product-name">
+Godhuma Halwa
+</div>
+
+<span class="rating">4.8 ★</span>
+<span class="delivery">Fresh</span>
+
+<div class="description">
+Traditional wheat halwa with ghee and a rich homemade taste.
+</div>
+
+<div class="location">
+📍 rajendranagar
+</div>
+
+<div class="price-section">
+<div class="price">
+Price: 250kg
+</div>
+</div>
+
+<button class="order-button">
+ADD TO CART
+</button>
+
+</div>
+</div>
+
+
+
+</div>
+
+
+<a href="menu.html"
+class="back-button">
+← BACK TO MENU
+</a>
+
+
+</main>
+
+
+
+<script>
+
+/* SEARCH */
+
+function searchFood() {
+
+    let input =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    let cards =
+        document
+        .querySelectorAll(".product-card");
+
+    cards.forEach(function(card) {
+
+        let name =
+            card.getAttribute("data-name");
+
+        if (name.includes(input)) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* FILTER */
+
+function filterFood() {
+
+    let filter =
+        document
+        .getElementById("categoryFilter")
+        .value;
+
+    let cards =
+        document
+        .querySelectorAll(".product-card");
+
+    cards.forEach(function(card) {
+
+        let category =
+            card.getAttribute("data-category");
+
+        if (
+            filter === "all" ||
+            category === filter
+        ) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* SORT */
+
+function sortFood() {
+
+    let select =
+        document
+        .getElementById("sortSelect")
+        .value;
+
+    let grid =
+        document
+        .getElementById("productGrid");
+
+    let cards =
+        Array.from(
+            grid.querySelectorAll(".product-card")
+        );
+
+    cards.sort(function(a, b) {
+
+        let priceA =
+            Number(a.getAttribute("data-price"));
+
+        let priceB =
+            Number(b.getAttribute("data-price"));
+
+        if (select === "low") {
+
+            return priceA - priceB;
+
+        }
+
+        if (select === "high") {
+
+            return priceB - priceA;
+
+        }
+
+        return 0;
+
+    });
+
+    cards.forEach(function(card) {
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+```
