@@ -13,7 +13,9 @@ permissions:
 
 jobs:
   deploy:
+    name: Deploy website
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,5 +26,11 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ap-south-1
 
-      - name: Upload website to S3
-        run: aws s3 sync . s3://${{ secrets.S3_BUCKET }}/ --exclude=.git/* --exclude=.github/*
+      - name: Check S3 bucket
+        run: aws s3 ls "s3://${{ secrets.S3_BUCKET }}/"
+
+      - name: Upload website files to S3
+        run: |
+          aws s3 sync . "s3://${{ secrets.S3_BUCKET }}/" \
+            --exclude ".git/*" \
+            --exclude ".github/*"
