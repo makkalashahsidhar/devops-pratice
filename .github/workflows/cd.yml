@@ -1,4 +1,5 @@
 
+
 name: Deploy Website to S3
 
 on:
@@ -15,15 +16,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configure AWS credentials
+      - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ap-south-1
 
-      - name: Deploy files to S3
+      - name: Upload website to S3
         run: aws s3 sync . s3://${{ secrets.S3_BUCKET }}/ --exclude ".git/*" --exclude ".github/*"
-
