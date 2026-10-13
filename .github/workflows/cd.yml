@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 
 name: Deploy Website to S3
 
 on:
+=======
+name: Deploy Website to S3
+
+on:
+  push:
+    branches:
+      - main
+>>>>>>> 9955d401054a10ce14884248da2ccf771356958d
   workflow_dispatch:
 
 permissions:
@@ -13,14 +22,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+<<<<<<< HEAD
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Configure AWS credentials
+=======
+      - name: Download GitHub code
+        uses: actions/checkout@v4
+
+      - name: Connect to AWS
+>>>>>>> 9955d401054a10ce14884248da2ccf771356958d
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ap-south-1
 
       - name: Deploy website to S3
+<<<<<<< HEAD
         run: aws s3 sync . s3://${{ secrets.S3_BUCKET }}/ --delete
+=======
+        run: |
+          aws s3 sync . s3://${{ secrets.S3_BUCKET }}/ \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "README.md"
+>>>>>>> 9955d401054a10ce14884248da2ccf771356958d
