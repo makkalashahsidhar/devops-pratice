@@ -1,0 +1,377 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venkat Sai Foodies - Veg</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.35),rgba(255,255,255,0.35)),
+        url("file:///C:/Users/pooja/Downloads/2abc5565-81e9-42bb-a18b-3d2e79453423.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    min-height:100vh;
+}
+
+header{
+    background:#fff;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#e23744;
+}
+
+.search-box input{
+    width:350px;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    background:rgba(0,0,0,0.25);
+}
+
+.hero h1{
+    color:white;
+    font-size:48px;
+    text-shadow:2px 2px 6px #000;
+}
+
+.hero p{
+    color:white;
+    font-size:20px;
+    margin-top:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1500px;
+    margin:auto;
+    padding:30px 0 60px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:28px;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.12);
+    transition:0.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 24px rgba(0,0,0,0.18);
+}
+
+.image-container{
+    position:relative;
+}
+
+.product-image{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+.offer{
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    background:#e23744;
+    color:#fff;
+    padding:6px 10px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.card-content{
+    padding:16px;
+}
+
+.product-name{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.meta{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+.rating{
+    background:#267e3e;
+    color:#fff;
+    padding:4px 8px;
+    border-radius:6px;
+    font-size:13px;
+}
+
+.delivery{
+    font-size:14px;
+    color:#444;
+}
+
+.category,.location{
+    font-size:14px;
+    color:#666;
+    margin-bottom:6px;
+}
+
+.price{
+    color:#e23744;
+    font-size:20px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.order-button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#e23744;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.order-button:hover{
+    background:#c92332;
+}
+
+.back{
+    display:block;
+    width:max-content;
+    margin:40px auto 0;
+    background:#222;
+    color:#fff;
+    padding:12px 24px;
+    border-radius:10px;
+    text-decoration:none;
+}
+
+@media(max-width:1100px){
+    .product-grid{grid-template-columns:repeat(3,1fr);}
+}
+
+@media(max-width:800px){
+    .product-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:520px){
+    .product-grid{grid-template-columns:1fr;}
+    .search-box input{width:100%;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🥗 Venkat Sai Foodies</div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search Veg Items...">
+    </div>
+
+    <div style="font-size:28px;">👤</div>
+</header>
+
+<section class="hero">
+    <h1>🥗 Veg Specials</h1>
+    <p>Fresh • Healthy • Homemade • Taste Every Bite</p>
+</section>
+
+<main class="container">
+
+<div class="product-grid" id="productGrid">
+
+    <!-- Veg Rice Combo -->
+    <div class="product-card">
+        <div class="image-container">
+            <img class="product-image" src="C:\Users\pooja\Downloads\veg rice.jpg">
+            <div class="offer">MEALS SPECIAL</div>
+        </div>
+        <div class="card-content">
+            <div class="product-name">Veg Rice Combo</div>
+            <div class="meta"><span class="rating">4.9 ★</span><span class="delivery">25-35 mins</span></div>
+            <div class="category">Rice • Dal • Sambar • Chutney • Papad • Fry • Curd</div>
+            <div class="location">📍 Rajendranagar, Hyderabad</div>
+            <div class="price">₹180 / Combo</div>
+            <button class="order-button">ADD TO CART</button>
+        </div>
+    </div>
+
+    <!-- Dal -->
+    <div class="product-card">
+        <div class="image-container">
+            <img class="product-image" src="C:\Users\pooja\Downloads\dal.jpg">
+        </div>
+        <div class="card-content">
+            <div class="product-name">Dal</div>
+            <div class="meta"><span class="rating">4.8 ★</span><span class="delivery">20-30 mins</span></div>
+            <div class="category">Lentils • Healthy • Homemade</div>
+            <div class="location">📍 Rajendranagar, Hyderabad</div>
+            <div class="price">₹60</div>
+            <button class="order-button">ADD TO CART</button>
+        </div>
+    </div>
+
+    <!-- Sambar -->
+    <div class="product-card">
+        <div class="image-container">
+            <img class="product-image" src="C:\Users\pooja\Downloads\sam.jpg">
+            <div class="offer">TRADITIONAL</div></div>
+        <div class="card-content">
+            <div class="product-name">Sambar</div>
+            <div class="meta"><span class="rating">4.8 ★</span><span class="delivery">20-30 mins</span></div>
+            <div class="category">South Indian • Vegetables • Fresh</div>
+            <div class="location">📍 Rajendranagar, Hyderabad</div>
+            <div class="price">₹70</div>
+            <button class="order-button">ADD TO CART</button>
+        </div>
+    </div>
+
+    <!-- Chutney -->
+    <div class="product-card">
+        <div class="image-container">
+            <img class="product-image" src="C:\Users\pooja\Downloads\cc.jpg">
+            <div class="offer">FRESH</div>
+        </div>
+        <div class="card-content">
+            <div class="product-name">Chutney</div>
+            <div class="meta"><span class="rating">4.7 ★</span><span class="delivery">15-20 mins</span></div>
+            <div class="category">Coconut • Peanut • Freshly Ground</div>
+            <div class="location">📍 Rajendranagar, Hyderabad</div>
+            <div class="price">₹30</div>
+            <button class="order-button">ADD TO CART</button>
+        </div>
+    </div>
+
+    <!-- Papad -->
+    <div class="product-card">
+        <div class="image-container">
+            <img class="product-image" src="C:\Users\pooja\Downloads\pp.png">
+            <div class="offer">CRISPY</div>
+        </div>
+        <div class="card-content">
+            <div class="product-name">Papad</div>
+            <div class="meta"><span class="rating">4.7 ★</span><span class="delivery">10-15 mins</span></div>
+            <div class="category">Roasted • Fried • Crispy</div>
+            <div class="location">📍 Rajendranagar, Hyderabad</div>
+            <div class="price">₹20</div>
+            <button class="order-button">ADD TO CART</button>
+        </div>
+    </div>
+
+    <!-- Veg Fry -->
+    <div class="product-card">
+        <div class="image-container">
+            <img class="product-image" src="C:\Users\pooja\Downloads\ff.jpeg">
+            <div class="offer">FRESH</div>
+        </div>
+        <div class="card-content">
+            <div class="product-name">Veg Fry</div>
+            <div class="meta"><span class="rating">4.8 ★</span><span class="delivery">25-35 mins</span></div>
+            <div class="category">Seasonal Vegetables • Homemade Fry</div>
+            <div class="location">📍 Rajendranagar, Hyderabad</div>
+            <div class="price">₹80</div>
+            <button class="order-button">ADD TO CART</button>
+        </div>
+    </div>
+
+    <!-- Veg Curry -->
+    <div class="product-card">
+        <div class="image-container"><img class="product-image" src="C:\Users\pooja\Downloads\ccee.jpg">
+            <div class="offer">POPULAR</div></div>
+        <div class="card-content">
+            <div class="product-name">Veg Curry</div>
+            <div class="meta"><span class="rating">4.8 ★</span><span class="delivery">25-35 mins</span></div>
+            <div class="category">Mixed Vegetables • Curry • Homemade</div>
+            <div class="location">📍 Rajendranagar, Hyderabad</div>
+            <div class="price">₹90</div>
+            <button class="order-button">ADD TO CART</button>
+        </div>
+    </div>
+
+    <!-- Curd -->
+    <div class="product-card">
+        <div class="image-container">
+            <img class="product-image" src="C:\Users\pooja\Downloads\cce.jpg">
+            <div class="offer">COOL</div>
+        </div>
+        <div class="card-content">
+            <div class="product-name">Curd</div>
+            <div class="meta"><span class="rating">4.8 ★</span><span class="delivery">10-15 mins</span></div>
+            <div class="category">Fresh • Homemade • Chilled</div>
+            <div class="location">📍 Rajendranagar, Hyderabad</div>
+            <div class="price">₹30</div>
+            <button class="order-button">ADD TO CART</button>
+        </div>
+    </div>
+
+</div>
+
+<a href="menu.html" class="back">← Back to Menu</a>
+
+</main>
+
+<script>
+const searchInput = document.getElementById('searchInput');
+const cards = document.querySelectorAll('.product-card');
+
+searchInput.addEventListener('keyup', function(){
+    const value = this.value.toLowerCase();
+
+    cards.forEach(card => {
+        const name = card.querySelector('.product-name').innerText.toLowerCase();
+
+        if(name.includes(value)){
+            card.style.display = 'block';
+        }else{
+            card.style.display = 'none';
+        }
+    });
+});
+</script>
+
+</body>
+</html>
+```
